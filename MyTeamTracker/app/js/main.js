@@ -4,7 +4,7 @@
         jQuery: '/Scripts/jquery-1.9.1.min',
         underscore: '/Scripts/underscore.min',
         uibootstrap: 'Scripts/ui-bootstrap-tpls-0.6.0',
-        smarttable: '/app/js/lib/Smert-Table.min',
+        smarttable: '/app/js/lib/Smart-Table.min',
     },
     baseUrl: '/app/js',
     shim: {
