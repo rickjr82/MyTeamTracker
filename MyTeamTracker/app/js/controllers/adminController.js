@@ -10,7 +10,8 @@
                 $scope.$watch('teamId', function () { $rootScope.teamId = $scope.teamId; });
                 $scope.modifyTeams = function () {
                     var opts = { backdrop: true, keyboard: true, backdropClick: false, templateUrl: '/app/html/partials/teamList.html', controller: 'teamListController' };
-                    $dialog.open(opts).then(function (result) {
+                    var modalInstance = $dialog.open(opts);
+                    modalInstance.result.then(function (result) {
                         $scope.teamId = 0;
                         $scope.teams = result;
                     });
