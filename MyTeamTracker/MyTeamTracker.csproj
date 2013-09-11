@@ -242,13 +242,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\html\partials\admin.html" />
+    <Content Include="app\html\partials\gameList.html" />
     <Content Include="app\html\partials\playerList.html" />
+    <Content Include="app\html\partials\Signup.html" />
     <Content Include="app\html\partials\teamDetail.html" />
     <Content Include="app\html\partials\teamList.html" />
     <Content Include="app\js\app.js" />
     <Content Include="app\js\controllers\adminController.js" />
     <Content Include="app\js\controllers\controllers.js" />
     <Content Include="app\js\controllers\playerListController.js" />
+    <Content Include="app\js\controllers\signupController.js" />
     <Content Include="app\js\controllers\teamDetailController.js" />
     <Content Include="app\js\controllers\teamListController.js" />
     <Content Include="app\js\lib\Smart-Table.min.js" />
