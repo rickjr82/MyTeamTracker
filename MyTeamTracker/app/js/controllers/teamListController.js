@@ -1,7 +1,7 @@
 ﻿define(['controllers/controllers', 'services/teamDetail'],
     function (controllers) {
-        controllers.controller('teamListController', ['$scope', 'teamDetail', 'dialog',
-            function ($scope, teamDetail, dialog) {
+        controllers.controller('teamListController', ['$scope', 'teamDetail', '$modalInstance',
+            function ($scope, teamDetail, $modalInstance) {
                 $scope.teams = [];
                 teamDetail.getTeams().then(function (result) {
                     $scope.teams = result;
@@ -38,7 +38,7 @@
                     }
                 };
                 $scope.close = function () {
-                    dialog.close($scope.teams);
+                    $modalInstance.close($scope.teams);
                 };
             }]);
     });

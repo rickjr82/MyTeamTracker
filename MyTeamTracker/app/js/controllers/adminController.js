@@ -1,7 +1,7 @@
 ﻿define(['controllers/controllers', 'uibootstrap', 'controllers/teamListController', 'controllers/playerListController', 'controllers/teamDetailController'],
     function (controllers) {
         controllers.controller('adminController', ['$scope','$rootScope', '$modal', 'teamDetail',
-            function ($scope, $rootScope,$dialog, teamDetail) {
+            function ($scope, $rootScope, $modal, teamDetail) {
                 $scope.teams = [];
                 $scope.teamId = 0;
                 teamDetail.getTeams().then(function (result) {
@@ -10,7 +10,7 @@
                 $scope.$watch('teamId', function () { $rootScope.teamId = $scope.teamId; });
                 $scope.modifyTeams = function () {
                     var opts = { backdrop: true, keyboard: true, backdropClick: false, templateUrl: '/app/html/partials/teamList.html', controller: 'teamListController' };
-                    var modalInstance = $dialog.open(opts);
+                    var modalInstance = $modal.open(opts);
                     modalInstance.result.then(function (result) {
                         $scope.teamId = 0;
                         $scope.teams = result;
@@ -18,13 +18,13 @@
                 };
                 $scope.modifyPlayers = function () {
                     var opts = { backdrop: true, keyboard: true, backdropClick: true, templateUrl: '/app/html/partials/playerList.html', controller: 'playerListController' };
-                    $dialog.open(opts);                 
+                    $modal.open(opts);
                 };
                 $scope.manageTeam = function () {
                     var opts = {
                         backdrop: true, keyboard: true, backdropClick: true, templateUrl: '/app/html/partials/teamDetail.html', controller: 'teamDetailController'
                     };
-                    $dialog.open(opts);                    
+                    $modal.open(opts);
                 };
             }]);
     });
