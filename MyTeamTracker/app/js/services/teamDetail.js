@@ -3,9 +3,18 @@
         services.factory('teamDetail', ['$http','$q',
             function ($http, $q) {
                 return {
-                    getTeamPlayers: function (teamId) { 
+                    getTeamPlayers: function (teamId) {
                         var deferred = $q.defer();
                         $http.get('/api/TeamSearch/TeamDetails/GetTeamMembers', { params: { teamId: teamId } }).success(function (data) {
+                            deferred.resolve(data);
+                        }).error(function () {
+                            deferred.reject();
+                        });
+                        return deferred.promise;
+                    },
+                    getTeamTasks: function (teamId) {
+                        var deferred = $q.defer();
+                        $http.get('/api/TeamSearch/TeamDetails/GetTeamTasks', { params: { teamId: teamId } }).success(function (data) {
                             deferred.resolve(data);
                         }).error(function () {
                             deferred.reject();
@@ -15,6 +24,15 @@
                     getPlayers: function () {
                         var deferred = $q.defer();
                         $http.get('/api/TeamSearch/TeamDetails/GetPlayers').success(function (data) {
+                            deferred.resolve(data);
+                        }).error(function () {
+                            deferred.reject();
+                        });
+                        return deferred.promise;
+                    },
+                    getTasks: function () {
+                        var deferred = $q.defer();
+                        $http.get('/api/TeamSearch/TeamDetails/GetTasks').success(function (data) {
                             deferred.resolve(data);
                         }).error(function () {
                             deferred.reject();
