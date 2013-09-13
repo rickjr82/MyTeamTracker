@@ -250,6 +250,7 @@
     <Content Include="app\js\app.js" />
     <Content Include="app\js\controllers\adminController.js" />
     <Content Include="app\js\controllers\controllers.js" />
+    <Content Include="app\js\controllers\gameListController.js" />
     <Content Include="app\js\controllers\playerListController.js" />
     <Content Include="app\js\controllers\signupController.js" />
     <Content Include="app\js\controllers\teamDetailController.js" />
