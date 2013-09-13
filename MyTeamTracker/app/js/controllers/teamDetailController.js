@@ -29,13 +29,14 @@
                         { label: 'Task', map: 'name' },
                         { label: 'Description', map: 'description' }
                     ];
-                }
+                };
                 $scope.init();
                 $scope.addPlayerToTeam = function () {
                     teamDetail.addPlayerToTeam($scope.currentPlayerId, $rootScope.teamId).then(function () {
                         var player = _.findWhere($scope.players, { id: $scope.currentPlayerId });
                         $scope.teamPlayers.unshift(player);
                     });
+                };
                     $scope.addTaskToTeam = function () {
                         teamDetail.addTaskToTeam($scope.currentTaskId, $rootScope.teamId).then(function () {
                             var task = _.findWhere($scope.tasks, { id: $scope.currentTaskId });

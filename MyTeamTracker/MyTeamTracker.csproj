@@ -244,7 +244,7 @@
     <Content Include="app\html\partials\admin.html" />
     <Content Include="app\html\partials\gameList.html" />
     <Content Include="app\html\partials\playerList.html" />
-    <Content Include="app\html\partials\Signup.html" />
+    <Content Include="app\html\partials\signup.html" />
     <Content Include="app\html\partials\teamDetail.html" />
     <Content Include="app\html\partials\teamList.html" />
     <Content Include="app\js\app.js" />

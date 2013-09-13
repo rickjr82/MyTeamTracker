@@ -1,4 +1,4 @@
-﻿define(['controllers/controllers', 'uibootstrap', 'controllers/teamListController', 'controllers/playerListController', 'controllers/teamDetailController'],
+﻿define(['controllers/controllers', 'uibootstrap', 'controllers/teamListController', 'controllers/signupController', 'controllers/playerListController', 'controllers/teamDetailController'],
     function (controllers) {
         controllers.controller('adminController', ['$scope','$rootScope', '$modal', 'teamDetail',
             function ($scope, $rootScope, $modal, teamDetail) {
@@ -18,6 +18,12 @@
                 };
                 $scope.modifyPlayers = function () {
                     var opts = { backdrop: true, keyboard: true, backdropClick: true, templateUrl: '/app/html/partials/playerList.html', controller: 'playerListController' };
+                    $modal.open(opts);
+                };
+                $scope.signupForTasks = function () {
+                    var opts = {
+                        backdrop: true, keyboard: true, backdropClick: true, templateUrl: '/app/html/partials/signup.html', controller: 'signupController'
+                    };
                     $modal.open(opts);
                 };
                 $scope.manageTeam = function () {

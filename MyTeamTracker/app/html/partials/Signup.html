@@ -14,7 +14,7 @@
             <td>{{game.date}}</td>
             <td>{{game.opponent}}</td>
             <td>{{game.location}}</td>
-            <td ng-repeat="task in teamTasks"><input type="checkbox" ng-model="game[task.name].selected" ng-disabled="game[task.name].selected || game[task.name].selectedBy == currentUser.player"></td>
+            <td ng-repeat="task in teamTasks"><input type="checkbox" ng-model="game[task.name].selected" ng-disabled="game[task.name].selectedBy != null || game[task.name].selectedBy == currentUser.player"></td>
         </tr>
     </tbody>
 </table>
