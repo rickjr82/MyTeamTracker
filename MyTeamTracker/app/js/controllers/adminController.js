@@ -1,12 +1,14 @@
-﻿define(['controllers/controllers', 'uibootstrap', 'controllers/teamListController', 'controllers/signupController', 'controllers/playerListController', 'controllers/teamDetailController'],
+﻿define(['controllers/controllers', 'uibootstrap', 'controllers/teamListController', 'controllers/signupController', 'controllers/playerListController', 'controllers/teamDetailController', 'services/logger', 'services/dataservice'],
     function (controllers) {
-        controllers.controller('adminController', ['$scope','$rootScope', '$modal', 'teamDetail',
-            function ($scope, $rootScope, $modal, teamDetail) {
+        controllers.controller('adminController', ['$scope', '$rootScope', '$modal', 'dataservice', 'logger',
+            function ($scope, $rootScope, $modal, dataservice, logger) {
                 $scope.teams = [];
                 $scope.teamId = 0;
-                teamDetail.getTeams().then(function (result) {
+                logger.info("loading teams")
+                dataservice.getTeams().then(function (result) {
+                    logger.info("teams loaded")
                     $scope.teams = result;
-                });
+                }).fail(function (error) { logger.error(error, "load failed"); });
                 $scope.$watch('teamId', function () { $rootScope.teamId = $scope.teamId; });
                 $scope.modifyTeams = function () {
                     var opts = { backdrop: true, keyboard: true, backdropClick: false, templateUrl: '/app/html/partials/teamList.html', controller: 'teamListController' };
