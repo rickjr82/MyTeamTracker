@@ -6,8 +6,8 @@
                 $scope.teamId = 0;
                 logger.info("loading teams")
                 dataservice.getTeams().then(function (result) {
-                    logger.info("teams loaded")
-                    $scope.teams = result;
+                    logger.info(results.count()+" teams loaded")
+                    $scope.teams = result.results;
                 }).fail(function (error) { logger.error(error, "load failed"); });
                 $scope.$watch('teamId', function () { $rootScope.teamId = $scope.teamId; });
                 $scope.modifyTeams = function () {
