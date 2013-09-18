@@ -12,11 +12,17 @@ namespace MyTeamTracker.App_Start {
   ///</remarks>
   public static class BreezeWebApiConfig {
 
-    public static void RegisterBreezePreStart() {
-      GlobalConfiguration.Configuration.Routes.MapHttpRoute(
-          name: "BreezeApi",
-          routeTemplate: "breeze/{controller}/{action}"
-      );
-    }
+      public static void RegisterBreezePreStart()
+      {
+          GlobalConfiguration.Configuration.Routes.MapHttpRoute(
+              name: "BreezeApi",
+              routeTemplate: "breeze/{controller}/{action}");
+
+          GlobalConfiguration.Configuration.Routes.MapHttpRoute(
+                  name: "DefaultApi",
+                  routeTemplate: "api/TeamSearch/{controller}/{action}/{id}",
+                  defaults: new { id = RouteParameter.Optional }
+              );
+      }
   }
 }
