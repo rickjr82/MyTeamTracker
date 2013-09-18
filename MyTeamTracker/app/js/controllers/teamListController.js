@@ -38,6 +38,9 @@
 
                     logger.info("Fetched Teams ");
                 }
+                function queryFailed(error) {
+                    logger.error(error.message, "Query failed");
+                }
                 function extendItem(item) {
                     if (item.isEditing !== undefined) return; // already extended
 
@@ -55,9 +58,7 @@
                         dataservice.saveChanges();
                     }
                 }
-                function queryFailed(error) {
-                    logger.error(error.message, "Query failed");
-                }
+              
                 $scope.deleteTeam = function (team) {
                     if (team.id !== 0) {
                         datacontext.deleteTeam(team.id).then(function () {
