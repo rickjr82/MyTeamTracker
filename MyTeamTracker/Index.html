@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+@model MyTeamTracker.Models.LoginModel
+@{
+    ViewBag.Title = "My Team Tracker";
+}
+
+
+<header>
+    <h1>@ViewBag.Title</h1>
+          <script type="text/javascript" src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/q.js"></script>
+    <script type="text/javascript" data-main="/app/js/main" src="/Scripts/require.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Content/toastr.css" />
+</header>
+
+<div id="main-content">    
+    <div ng-include="'/app/html/partials/admin.html'">
+    </div>
+</div>
