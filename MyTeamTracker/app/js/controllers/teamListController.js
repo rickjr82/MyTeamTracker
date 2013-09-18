@@ -4,7 +4,8 @@
             function ($scope, dataservice, $modalInstance, logger) {
                 var removeItem = breeze.core.arrayRemoveItem;
                 var suspendItemSave;
-                $scope.teams = [];                
+                $scope.teams = [];
+                logger.info('hi','something');
                 $scope.getTeams = function () {
                     dataservice.getTeams()
                         .then(querySucceeded)
