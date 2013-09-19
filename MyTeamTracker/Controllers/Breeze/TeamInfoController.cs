@@ -34,6 +34,10 @@ namespace MyTeamTracker.Controllers
         {
             return _contextProvider.Context.Teams;
         }
+        public IQueryable<Player> Players()
+        {
+            return _contextProvider.Context.Players;
+        }
 
         // ~/breeze/todos/SaveChanges
         [HttpPost]
